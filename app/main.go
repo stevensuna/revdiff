@@ -122,7 +122,7 @@ func run(opts options) (int, error) {
 		err                error
 	)
 
-	programOptions := []tea.ProgramOption{tea.WithAltScreen(), tea.WithoutSignalHandler()}
+	programOptions := []tea.ProgramOption{tea.WithAltScreen(), tea.WithoutSignalHandler(), tea.WithFPS(120)}
 	if !opts.NoMouse {
 		programOptions = append(programOptions, tea.WithMouseCellMotion())
 	}
