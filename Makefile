@@ -13,6 +13,7 @@ build:
 	cp .bin/revdiff.$(BRANCH) .bin/revdiff
 
 test:
+	uv run --with pyyaml python scripts/validate-portable-plugin.py
 	go clean -testcache
 	go test -race -coverprofile=coverage.out ./...
 	grep -v "_mock.go" coverage.out | grep -v mocks > coverage_no_mocks.out
